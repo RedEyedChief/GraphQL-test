@@ -1,7 +1,14 @@
 import express      from "express";
 import { appPort }  from "./lib/config.js";
+import middlewares  from "./lib/middlewares.js";
+import router       from "./lib/router.js";
 
 const app = express();
+
+app.use(middlewares.json);
+app.use(middlewares.cors);
+app.use("/api/v1", router);
+
 const server = app.listen(appPort, (error) => {
     if (error) throw error;
   

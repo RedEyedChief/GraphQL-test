@@ -1,3 +1,5 @@
 {
-    "appPort": "{{PORT}}"
+    "appPort": "{{PORT}}",
+    "SHPF_ENDPOINT": "{{SHPF_ENDPOINT}}",
+    "SHPF_ACCESS_TOKEN": "{{SHPF_ACCESS_TOKEN}}"
 }

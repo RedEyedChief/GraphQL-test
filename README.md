@@ -3,7 +3,6 @@
 2. ```npm run nodemon```
 
 ## OWN CONFIGS
-1. create the file .env
-2. copy variables from .env.defaults into .env
-3. set your own values
+1. cp .env.defaults .env
+2. set your own values in .env
 
