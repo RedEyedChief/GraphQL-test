@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "56011ad3-4cd7-405a-8a80-4ac8822b4662",
+		"name": "Split-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5785673"
+	},
+	"item": [
+		{
+			"name": "Create product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Some name\",\r\n    \"tags\": [\"1aa\",\"2ds\",\"3ds\",\"4rr\",\"5fd\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/graphql",
+						"disabled": true
+					},
+					{
+						"key": "X-Shopify-Access-Token",
+						"value": "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"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query GetProductsById($id: ID!) {\r\n  product(id: $id) {\r\n    title\r\n  }\r\n}",
+						"variables": "{\r\n    \"id\": \"gid://shopify/Product/8215759126826\"\r\n}"
+					}
+				},
+				"url": {
+					"raw": "https://dmytro-m-test.myshopify.com/admin/api/2023-04/graphql.json",
+					"protocol": "https",
+					"host": [
+						"dmytro-m-test",
+						"myshopify",
+						"com"
+					],
+					"path": [
+						"admin",
+						"api",
+						"2023-04",
+						"graphql.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
